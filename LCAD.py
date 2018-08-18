@@ -1,8 +1,22 @@
+"""To do:
+-Roster class
+    -Print roster method in Roster class
+-Calltype class
+-Ticket class
+    -location parser method in Ticket class
+    -make all input .upper()
+    -print ticket method in Ticket class
+-Front end
+"""
+
+
 class Roster():
     """
     uid = unit identifier, atick = what ticket they are currently assigned to.
     status: 0 = Unavailable, 1 = Stationary, 2 = One high priority call 3 = Break, 4 = On low priority call,
     5 = Available.
+
+
     """
     def __init__(self, post, uid, zone, status, atick):
         self.post = post
@@ -21,6 +35,25 @@ class Roster():
             if i.uid != None:
                 r_list.append(i)
         return r_list
+
+    def roster_print():
+
+
+class CallTypes():
+    """
+    call types that go into tickets
+    type: this is where the full type name goes ie "Unit Assist: Patient Issues"
+    priority: 0-5 priority level. 0 = Unavailable, 1 = Stationary, 2 = One high priority call 3 = Break,
+    4 = On low priority call, 5 = Available.
+    backup: how many officers need to get assigned to this call
+    """
+    def __init__(self, type, priority, backup):
+        self.type = type
+        self.priority = priority
+        self.backup = backup
+
+    call_dict = {"UAP": "Unit Assist Patient Issues", "UAV": "Unit Assist Visitor Issues""}
+
 
 
 #        post, uid, zone, status, atick
