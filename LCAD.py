@@ -1,7 +1,7 @@
 """To do:
 -Roster class
     -Print roster method in Roster class
--Calltype class
+-Calltypes class
 -Ticket class
     -location parser method in Ticket class
     -make all input .upper()
@@ -25,6 +25,10 @@ class Roster():
         self.status = status
         self. atick = atick
 
+    def __repr__(self):
+        for i in r_list:
+            return str(i)
+
     def roster_entry():
         r_list = []
         for i in source_list:
@@ -35,8 +39,6 @@ class Roster():
             if i.uid != None:
                 r_list.append(i)
         return r_list
-
-    def roster_print():
 
 
 class CallTypes():
