@@ -76,3 +76,21 @@ UAV = CallType("UAV", 2, 2, "Unit Assist: Visitor Issues")
 ACC = CallType("ACC", 0, 1, "Access Door Request")
 
 call_list = [UAP, UAV, ACC]
+
+
+class Location():
+
+    def __init__(self, location, lzone):
+        self.location = location
+        self.lzone = lzone
+
+    def lparser(self):
+        self.location = input("Please enter the location:").upper()
+        if self.location[-1] == "H":
+            self.lzone = 4
+        if self.location[0] <= 2 and self.location[-1] = "W":
+            self.lzone = 8
+        if self.location[0] > 2 and self.location[-1] = "W":
+            self.lzone = 6
+        if isnumber(self.location[-1]):
+            self.lzone = 5
