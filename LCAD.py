@@ -1,6 +1,5 @@
 """To do:
 -Ticket class
-    -location parser method in Ticket class
     -make all input .upper()
     -print ticket method in Ticket class
 -Front end
@@ -84,13 +83,27 @@ class Location():
         self.location = location
         self.lzone = lzone
 
+    def __repr__(self):
+        return "Location:%s Zone:%s" % (self.location, self.lzone)
+
     def lparser(self):
-        self.location = input("Please enter the location:").upper()
         if self.location[-1] == "H":
             self.lzone = 4
-        if self.location[0] <= 2 and self.location[-1] = "W":
-            self.lzone = 8
-        if self.location[0] > 2 and self.location[-1] = "W":
-            self.lzone = 6
-        if isnumber(self.location[-1]):
+        elif self.location[-1].isdigit() == True and len(self.location) == 4:
             self.lzone = 5
+        elif (self.location[-1] == "E" or "W") and (len(self.location) == 5):
+            if int(self.location[0]) <= 2:
+                self.lzone = 8
+            else:
+                self.lzone = 6
+        elif self.location[-1] == "S":
+            if int(self.location[0]) <= 2:
+                self.lzone = 8
+            else:
+                self.lzone = 6
+        elif self.location == "ED INTAKE":
+            self.lzone = 2
+        elif self.location[:2] == "ER":
+            self.lzone = 3
+        elif self.location[:3] == "TOW" or "GAR" or "LOT" or "EXT":
+            self.lzone = 7
