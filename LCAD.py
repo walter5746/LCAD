@@ -107,3 +107,5 @@ class Location():
             self.lzone = 3
         elif self.location[:3] == "TOW" or "GAR" or "LOT" or "EXT":
             self.lzone = 7
+
+
