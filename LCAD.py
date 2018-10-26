@@ -21,12 +21,14 @@ class Roster():
     def roster_entry():
         r_list = []
         for i in source_list:
-            i.uid = input("Please enter the unit identifier. Press enter for no officer. ")
+            i.uid = input("Please enter the post {} officer. Press enter for no officer. ".format(i.post))
             if i.uid == "":
                 i.uid = None
         for i in source_list:
             if i.uid != None:
                 r_list.append(i)
+        for i in r_list:
+            print(i)
         return r_list
 
     def __repr__(self):
@@ -108,4 +110,22 @@ class Location():
         elif self.location[:3] == "TOW" or "GAR" or "LOT" or "EXT":
             self.lzone = 7
 
+class Ticket(Roster, CallType, Location):
+    def __init___(self, cadnum, tuid, tstatus, tctype, tftype, tlocation, tlzone):
+        self.cadnum = cadnum
+        self.tuid = tuid
+        self.tstatus = tstatus
+        self.tctype = tctype
+        self.tftype = tftype
+        self.tlocation = tlocation
+        self.tlzone = tlzone
+        super().__init__(uid, status, atick, ctype, ftype, location, lzone)
+
+    def new_ticket(self):
+        pass
+
+
+tic1 = (1, None, None, None, None, None, None)
+tic2 = (2, None, None, None, None, None, None)
+tic3 = (3, None, None, None, None, None, None)
 
